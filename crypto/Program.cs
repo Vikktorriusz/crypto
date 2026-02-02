@@ -80,6 +80,13 @@ namespace crypto
                         Console.WriteLine("\nNyomj meg egy billentyűt a folytatáshoz...");
                         Console.ReadKey();
                         break;
+
+                    case "5":
+                        Console.Clear();
+                        Console.WriteLine("Hagyjad bátyja az egészet csak minuszos");
+                        Console.WriteLine("\nNyomj meg egy billentyűt a folytatáshoz...");
+                        Console.ReadKey();
+                        break;
                 }
             }
         }
