@@ -19,7 +19,7 @@ namespace crypto
         public double het { get; set; }
         public double ev { get; set; }
 
-        public Cryptok(string Nev, double Ar, double Ora, double Nap, double Het, double Ev)
+        public crypto(string Nev, double Ar, double Ora, double Nap, double Het, double Ev)
         {
             nev = Nev;
             ar = Ar;
