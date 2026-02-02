@@ -21,7 +21,10 @@ namespace crypto
                 double Ev = double.Parse(adatok[5]);
                 crypto osszadat = new crypto(Nev,Ar,Ora,Nap,Het,Ev);
                 cryptoLista.Add(osszadat);
-                Console.WriteLine(osszadat);
+            }
+            foreach (var item in cryptoLista)
+            {
+                Console.WriteLine(item);
             }
         }
     }
