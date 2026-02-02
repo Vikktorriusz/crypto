@@ -27,6 +27,10 @@ namespace crypto
                 Console.Clear();
                 Console.WriteLine("0 - Kilépés");
                 Console.WriteLine("1 - Crypto betöltése és listázása");
+                Console.WriteLine("2 - Keresés név szerint");
+                Console.WriteLine("3 - Legjobb árban lévő crypto");
+                Console.WriteLine("4 - Legszarabb árban lévő Crypto");
+                Console.WriteLine("5 - Hogyan kezdj el Cryptozni");
 
                 string menu = Console.ReadLine() ?? "";
                 int sorszam = 0;
@@ -41,6 +45,21 @@ namespace crypto
                         sorszam = 0;
                         foreach (var c in cryptoLista)
                             Console.WriteLine($"{sorszam++}. {c.nev} - Ár: {c.ar:F2} | 1ó: {c.ora}% | 1n: {c.nap}% | 1h: {c.het}% | 1év: {c.ev}%");
+                        Console.WriteLine("\nNyomj meg egy billentyűt a folytatáshoz...");
+                        Console.ReadKey();
+                        break;
+
+                    case "2":
+                        Console.Clear();
+                        Console.Write("Add meg a keresett kripto nevét: ");
+                        string keres = (Console.ReadLine() ?? "").ToLower().Trim();
+
+                        sorszam = 0;
+                        foreach (var c in cryptoLista)
+                        {
+                            if (c.nev.ToLower().Trim() == keres)  
+                                Console.WriteLine($"{sorszam++}. {c.nev} - Ár: ${c.ar:F2} | 1ó: {c.ora}% | 1n: {c.nap} % | 1h:  {c.het}% | 1év: {c.ev}%");
+                        }
                         Console.WriteLine("\nNyomj meg egy billentyűt a folytatáshoz...");
                         Console.ReadKey();
                         break;
