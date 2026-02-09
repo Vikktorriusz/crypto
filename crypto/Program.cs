@@ -33,6 +33,7 @@ namespace crypto
                 Console.WriteLine("3 - Legjobb árban lévő crypto");
                 Console.WriteLine("4 - Legrosszabb árban lévő Crypto");
                 Console.WriteLine("5 - Hogyan kezdj el Cryptozni");
+                Console.WriteLine("6 - Crypto törlése");
 
                 string menu = Console.ReadLine() ?? "";
                 int sorszam = 0;
@@ -115,6 +116,23 @@ namespace crypto
                         Console.WriteLine("Hagyjad bátyja az egészet csak minuszos");
                         Console.WriteLine("\nNyomj meg egy billentyűt a folytatáshoz...");
                         Console.ReadKey();
+                        break;
+
+                    //Crypto Törlése By: Tomi
+                    case "6":
+                        Console.Clear();
+                        sorszam = 0;
+                        foreach (var z in cryptoLista)
+                            Console.WriteLine($"{sorszam++}. {z}");
+
+                        Console.Write("Törlendő index: ");
+                        int torol;
+                        int.TryParse(Console.ReadLine() ?? "-1", out torol);
+
+                        if (torol >= 0 && torol < cryptoLista.Count)
+                            cryptoLista.RemoveAt(torol);
+                        else
+                            Console.WriteLine("Hibás index!");
                         break;
                 }
             }

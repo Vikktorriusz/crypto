@@ -32,7 +32,7 @@ namespace crypto
         public override string ToString()
         {
             return $"{nev} {ar} {ora} {nap} {het} {ev}";
-        }
+        } 
 
 
     }
