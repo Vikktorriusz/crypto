@@ -34,6 +34,23 @@ namespace crypto
             return $"{nev} {ar} {ora} {nap} {het} {ev}";
         } 
 
+        public static void torles(List<crypto> cryptoLista)
+        {
+                
+                int sorszam = 0;
 
+                Console.Write("Törlendő index: ");
+                int torol;
+                int.TryParse(Console.ReadLine() ?? "-1", out torol);
+
+                if (torol >= 0 && torol < cryptoLista.Count)
+                    cryptoLista.RemoveAt(torol);
+                else {
+                    Console.WriteLine("Hibás index!");
+                }
+            foreach (var z in cryptoLista)
+                Console.WriteLine($"{sorszam++}. {z}");
+            return;
+        } 
     }
 }

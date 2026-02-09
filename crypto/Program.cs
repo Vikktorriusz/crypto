@@ -118,21 +118,12 @@ namespace crypto
                         Console.ReadKey();
                         break;
 
-                    //Crypto Törlése By: Tomi
+                    //Crypto Törlése By: Viktor/Tomi
                     case "6":
-                        Console.Clear();
                         sorszam = 0;
                         foreach (var z in cryptoLista)
                             Console.WriteLine($"{sorszam++}. {z}");
-
-                        Console.Write("Törlendő index: ");
-                        int torol;
-                        int.TryParse(Console.ReadLine() ?? "-1", out torol);
-
-                        if (torol >= 0 && torol < cryptoLista.Count)
-                            cryptoLista.RemoveAt(torol);
-                        else
-                            Console.WriteLine("Hibás index!");
+                        crypto.torles(cryptoLista);
                         break;
                 }
             }
