@@ -10,7 +10,7 @@ namespace crypto
             List<crypto> cryptoLista = new List<crypto>();
             var sorok = File.ReadAllLines("crypto.txt", System.Text.Encoding.Latin1).Skip(1);
 
-            //Fájl beolvasása és változók inicializálása
+            //Fájl beolvasása és változók inicializálása By: Vikor
             foreach (var sor in sorok)
             {
                 string[] adatok = sor.Split(';');
@@ -23,7 +23,7 @@ namespace crypto
                 crypto osszadat = new crypto(Nev,Ar,Ora,Nap,Het,Ev);
                 cryptoLista.Add(osszadat);
             }
-            //Menü rendszer fölépítése
+            //Menü rendszer fölépítése By: Tomi
             while (true)
             {
                 Console.Clear();
@@ -39,11 +39,11 @@ namespace crypto
 
                 switch (menu)
                 {
-                //Kilépés
+                    //Kilépés By: Tomi
                     case "0":
                         return;
-                
-                //Az összes Crypto beolvasása és listázása
+
+                    //Az összes Crypto beolvasása és listázása By: Tomi
                     case "1":
                         Console.Clear();
                         sorszam = 0;
@@ -53,7 +53,7 @@ namespace crypto
                         Console.ReadKey();
                         break;
 
-                    //Crypto keresése
+                    //Crypto keresése By: Tomi/Viktor
                     case "2":
                         Console.Clear();
                         Console.Write("Add meg a keresett kripto nevét: ");
@@ -69,7 +69,7 @@ namespace crypto
                         Console.ReadKey();
                         break;
 
-                    //Legjobb Crypto kimutatása
+                    //Legjobb Crypto kimutatása By: Vikor
                     case "3":
                         int index = 0;
                         Console.Clear();
@@ -89,7 +89,7 @@ namespace crypto
                         Console.ReadKey();
                         break;
 
-                    //Legrosszabb -||-
+                    //Legrosszabb -||- By: Tomi
                     case "4":
                         int index1 = 0;
                         Console.Clear();
@@ -109,7 +109,7 @@ namespace crypto
                         Console.ReadKey();
                         break;
 
-                    //Crypto bányászat kezdése
+                    //Crypto bányászat kezdése By: Tomi/Viktor
                     case "5":
                         Console.Clear();
                         Console.WriteLine("Hagyjad bátyja az egészet csak minuszos");
