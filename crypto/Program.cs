@@ -64,19 +64,40 @@ namespace crypto
                         Console.ReadKey();
                         break;
 
+                    case "3":
+                        int index = 0;
+                        Console.Clear();
+                        Console.WriteLine("Legjobb árban lévő Crypto");
+
+                        crypto legjobb = cryptoLista[0];
+                        foreach (var c in cryptoLista)
+                        {
+                            index++;
+                            if (c.ar > legjobb.ar)
+                                legjobb = c;
+                        }
+
+                        sorszam = 0;
+                        Console.WriteLine($" {legjobb.nev} - Ár: ${legjobb.ar:F2} | 1ó: {legjobb.ora}% | 1n: {legjobb.nap}% | 1h: {legjobb.het}% | 1év: {legjobb.ev}%");
+                        Console.WriteLine("\nNyomj meg egy billentyűt a folytatáshoz...");
+                        Console.ReadKey();
+                        break;
+
                     case "4":
+                        int index1 = 0;
                         Console.Clear();
                         Console.WriteLine("Legrosszabb árban lévő Crypto");
 
                         crypto legrosszabb = cryptoLista[0];
                         foreach (var c in cryptoLista)
                         {
+                            index1 ++;
                             if (c.ar < legrosszabb.ar)
                                 legrosszabb = c;
                         }
 
                         sorszam = 0;
-                        Console.WriteLine($"{sorszam++}. {legrosszabb.nev} - Ár: ${legrosszabb.ar:F2} | 1ó: {legrosszabb.ora}% | 1n: {legrosszabb.nap}% | 1h: {legrosszabb.het}% | 1év: {legrosszabb.ev}%");
+                        Console.WriteLine($" {legrosszabb.nev} - Ár: ${legrosszabb.ar:F2} | 1ó: {legrosszabb.ora}% | 1n: {legrosszabb.nap}% | 1h: {legrosszabb.het}% | 1év: {legrosszabb.ev}%");
                         Console.WriteLine("\nNyomj meg egy billentyűt a folytatáshoz...");
                         Console.ReadKey();
                         break;
