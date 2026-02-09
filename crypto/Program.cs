@@ -10,6 +10,7 @@ namespace crypto
             List<crypto> cryptoLista = new List<crypto>();
             var sorok = File.ReadAllLines("crypto.txt", System.Text.Encoding.Latin1).Skip(1);
 
+            //Fájl beolvasása és változók inicializálása
             foreach (var sor in sorok)
             {
                 string[] adatok = sor.Split(';');
@@ -22,6 +23,7 @@ namespace crypto
                 crypto osszadat = new crypto(Nev,Ar,Ora,Nap,Het,Ev);
                 cryptoLista.Add(osszadat);
             }
+            //Menü rendszer fölépítése
             while (true)
             {
                 Console.Clear();
@@ -37,9 +39,11 @@ namespace crypto
 
                 switch (menu)
                 {
+                //Kilépés
                     case "0":
                         return;
-
+                
+                //Az összes Crypto beolvasása és listázása
                     case "1":
                         Console.Clear();
                         sorszam = 0;
@@ -49,6 +53,7 @@ namespace crypto
                         Console.ReadKey();
                         break;
 
+                    //Crypto keresése
                     case "2":
                         Console.Clear();
                         Console.Write("Add meg a keresett kripto nevét: ");
@@ -64,6 +69,7 @@ namespace crypto
                         Console.ReadKey();
                         break;
 
+                    //Legjobb Crypto kimutatása
                     case "3":
                         int index = 0;
                         Console.Clear();
@@ -83,6 +89,7 @@ namespace crypto
                         Console.ReadKey();
                         break;
 
+                    //Legrosszabb -||-
                     case "4":
                         int index1 = 0;
                         Console.Clear();
@@ -102,6 +109,7 @@ namespace crypto
                         Console.ReadKey();
                         break;
 
+                    //Crypto bányászat kezdése
                     case "5":
                         Console.Clear();
                         Console.WriteLine("Hagyjad bátyja az egészet csak minuszos");
